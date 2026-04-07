@@ -1,73 +1,113 @@
-# DIO_SQLtest3
+# 🛒 Estruturação de Dados para E-commerce – Modelagem Relacional
 
-# 🛒 Projeto de Banco de Dados - E-commerce
+## 📌 Contexto
 
-Este projeto consiste na modelagem lógica de um banco de dados para um sistema de **e-commerce**, com base em boas práticas de modelagem relacional, uso de chaves primárias e estrangeiras, constraints e normalização. A implementação foi feita em MySQL.
+Em operações de e-commerce, análises confiáveis dependem diretamente da qualidade e organização dos dados.
 
-## 📘 Descrição
+Sem uma estrutura bem definida, torna-se difícil responder perguntas básicas como:
 
-A estrutura foi projetada para suportar operações comuns de um sistema de comércio eletrônico, como:
+- Qual a performance de vendas por cliente ou produto  
+- Quais fornecedores impactam mais o resultado  
+- Como está o nível de estoque e sua relação com pedidos  
+- Qual o comportamento de pedidos, pagamentos e entregas  
 
-- Cadastro de clientes (Pessoa Física e Jurídica)
-- Gerenciamento de produtos, categorias e fornecedores
-- Registro de pedidos, itens de pedido, pagamentos e entregas
-- Controle de estoque por produto
-- Associação de vendedores às vendas
-
-## 🗺️ Modelo Entidade-Relacionamento (EER)
-
-Abaixo está o diagrama ER que representa a estrutura do banco de dados modelado para o cenário de e-commerce:
-
-![Modelo ER do Banco de Dados](./diagrama3.png)
-
-## 🛠️ Estrutura das Tabelas
-
-- **Cliente**: Suporta tanto PF quanto PJ (mutuamente exclusivos via constraint).
-- **Endereço**: Ligado ao cliente.
-- **Fornecedor**: Fornece produtos.
-- **Categoria**: Classifica produtos.
-- **Produto**: Referencia categoria e fornecedor.
-- **Estoque**: Relacionado ao produto.
-- **Vendedor**: Realiza vendas.
-- **Pedido**: Contém cliente, vendedor e status.
-- **ItemPedido**: Representa os itens em um pedido.
-- **Pagamento**: Permite múltiplas formas de pagamento por pedido.
-- **Entrega**: Registra status e código de rastreio.
-
-## 🧪 Scripts
-
-- Criação das tabelas com constraints
-- Inserção de dados fictícios (mínimo 3 por entidade)
-- Consultas SQL utilizando:
-
-### ✅ Comandos usados:
-- `SELECT`, `WHERE`, `JOIN`, `ORDER BY`, `GROUP BY`, `HAVING`
-- Cálculo de valores derivados (ex: total por item)
-- Filtros por tipo, valor, status etc.
-
-## ❓ Exemplos de Consultas
-
-- Quantos pedidos foram feitos por cliente
-- Relação entre produtos e fornecedores
-- Produtos em estoque e sua quantidade
-- Pedidos com status e código de rastreio
-- Vendedores com média de frete por pedido
-
-## 📁 Organização
-
-- `create_database.sql` – Criação do banco e tabelas
-- `insert_data.sql` – População com dados fictícios
-- `queries.sql` – Consultas de teste
-
-## 🚀 Como usar
-
-1. Abra o MySQL Workbench
-2. Execute o script de criação do banco
-3. Insira os dados de exemplo
-4. Teste as queries fornecidas
+Este projeto simula a construção de uma base estruturada para suportar esse tipo de análise.
 
 ---
 
-**Autor:** Vinicius Borges  
-**Desafio:** DIO – Projeto de Modelagem de Banco de Dados  
-**Tecnologias:** MySQL
+## 🎯 Objetivo
+
+Desenvolver um modelo de dados relacional capaz de:
+
+- Organizar informações operacionais de um e-commerce  
+- Garantir integridade e consistência dos dados  
+- Permitir análises estruturadas via SQL  
+- Servir como base para dashboards e relatórios gerenciais  
+
+---
+
+## 🧠 Abordagem
+
+A construção do modelo seguiu princípios de modelagem relacional e organização para análise:
+
+- Definição de entidades e relacionamentos  
+- Normalização das tabelas  
+- Uso de chaves primárias e estrangeiras  
+- Aplicação de constraints para integridade  
+- Estruturação orientada a consultas analíticas  
+
+---
+
+## 🗺️ Modelo de Dados
+
+O modelo foi estruturado para representar as principais operações de um e-commerce:
+
+- Clientes (PF e PJ)  
+- Produtos, categorias e fornecedores  
+- Pedidos e itens de pedido  
+- Pagamentos e entregas  
+- Controle de estoque  
+- Vendedores  
+
+![Modelo ER](./diagrama3.png)
+
+---
+
+## 📊 Aplicação Analítica (SQL)
+
+A base construída permite responder perguntas de negócio como:
+
+- Quantos pedidos foram feitos por cliente  
+- Quais produtos têm maior volume ou receita  
+- Relação entre fornecedores e produtos vendidos  
+- Situação de estoque por item  
+- Desempenho de vendedores  
+- Status logístico de pedidos e entregas  
+
+---
+
+## ⚙️ Estrutura do Projeto
+
+- `create_database.sql` → criação das tabelas e estrutura  
+- `insert_data.sql` → inserção de dados fictícios  
+- `queries.sql` → consultas analíticas  
+
+---
+
+## 🧪 Exemplos de Análises
+
+Foram desenvolvidas queries utilizando:
+
+- `JOIN` para relacionar entidades  
+- `GROUP BY` e `HAVING` para agregações  
+- Cálculo de métricas (ex: total por pedido)  
+- Filtros por status, tipo e valor  
+
+---
+
+## 📈 Valor do Projeto
+
+Este projeto demonstra como uma boa estrutura de dados:
+
+- Facilita a análise e interpretação de informações  
+- Garante consistência e confiabilidade  
+- Permite construção de dashboards e relatórios  
+- Serve como base para tomada de decisão  
+
+---
+
+## 🛠️ Tecnologias utilizadas
+
+MySQL • SQL  
+
+---
+
+## 👤 Sobre mim
+
+Atuo na interseção entre **finanças, dados e tecnologia**, com foco em estruturar e analisar informações para suporte à decisão.
+
+---
+
+## 📌 Observações
+
+Projeto desenvolvido para fins de portfólio.
